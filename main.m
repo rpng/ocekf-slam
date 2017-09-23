@@ -20,7 +20,7 @@ clc
 
 
 %%
-randomselect='random'; % 'random' or 'repeatlast';
+randomselect='repeatlast'; % 'random' or 'repeatlast';
 switch randomselect
     case 'repeatlast'
         load randstates;
