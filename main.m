@@ -51,7 +51,7 @@ sigma_v = sigma/sqrt(2); %.1*v_true; %
 sigma_w = 2*sqrt(2)*sigma; %.1*omega_true; 1*pi/180; %
 Q = diag([sigma_v^2 sigma_w^2]);
 
-sigma_p = .1; %noise is the percentagae of distance measurement, BUT double check rws.m since sometimes we use this as a constant absolute sigma (like in invariant EKF tro submission)
+sigma_p = .1; %noise is the percentagae of distance measurement, BUT double check rws.m since sometimes we use this as a constant absolute sigma
 sigma_r = 1; %range measmnt noise
 sigma_th = 10*pi/180;%bearing measuremnt noise
 
@@ -67,12 +67,6 @@ min_range = .5;
 init_steps = 0;%3
 max_delay = 10;%for delayed initial
 NIncr = 0; %increment number of incremental MAP: 0 - not runing
-
-global gNPERIODIC gREORDERING gRELINEARIZATION
-gNPERIODIC = 100; %in isam, periodic batch update..
-gREORDERING = 1; %isam- reordering
-gRELINEARIZATION = 1; %iSAM: relinearization and redo qr: check if it is matlab qr or davis' cs_qr
-
 
 
 %% preallocate memory for saving resutls
